@@ -1,0 +1,597 @@
+{
+  "fetchedAt": "2026-11-02",
+  "source": "https://api.openstreetmap.org/api/0.6/map?bbox=126.810,37.477,126.840,37.500",
+  "license": "ODbL 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "copyright": "https://www.openstreetmap.org/copyright",
+  "campus": {
+    "lat": 37.487519750000004,
+    "lng": 126.82579907777777
+  },
+  "places": [
+    {
+      "id": "way/1330375758",
+      "name": "푸른수목원 KB숲교육센터",
+      "lat": 37.4854242375,
+      "lng": 126.82759425,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "정원",
+      "amenity": "garden",
+      "openingHours": null,
+      "access": "yes",
+      "source": "https://www.openstreetmap.org/way/1330375758"
+    },
+    {
+      "id": "way/1330376393",
+      "name": "항동푸른도서관",
+      "lat": 37.48461086,
+      "lng": 126.82479268,
+      "types": [
+        "공부"
+      ],
+      "kind": "도서관",
+      "amenity": "library",
+      "openingHours": "tu-fr 09:00-21:00, sa-su 09:00-17:00",
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/1330376393"
+    },
+    {
+      "id": "node/368656618",
+      "name": "유한대학 도서관",
+      "lat": 37.4867801,
+      "lng": 126.8219677,
+      "types": [
+        "공부"
+      ],
+      "kind": "도서관",
+      "amenity": "library",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/368656618"
+    },
+    {
+      "id": "node/7045880038",
+      "name": "장미원",
+      "lat": 37.4848096,
+      "lng": 126.82376,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "정원",
+      "amenity": "garden",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/7045880038"
+    },
+    {
+      "id": "way/465669376",
+      "name": "푸른수목원",
+      "lat": 37.484231471428565,
+      "lng": 126.82522914571429,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/465669376"
+    },
+    {
+      "id": "node/12309209206",
+      "name": "푸른카페 푸른수목원점",
+      "lat": 37.4825721,
+      "lng": 126.8236957,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/12309209206"
+    },
+    {
+      "id": "way/1330204476",
+      "name": "9로평상",
+      "lat": 37.4821844,
+      "lng": 126.82611423333333,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": "Mo-Su 10:00-22:00",
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/1330204476"
+    },
+    {
+      "id": "node/12309209738",
+      "name": "그리니치카페",
+      "lat": 37.4815243,
+      "lng": 126.8237473,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": "Mo-Su 09:00-21:00",
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/12309209738"
+    },
+    {
+      "id": "node/12309196803",
+      "name": "진원반찬",
+      "lat": 37.4812441,
+      "lng": 126.8248659,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": "Mo-Sa 09:00-20:00",
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/12309196803"
+    },
+    {
+      "id": "node/12309168281",
+      "name": "항동회수산",
+      "lat": 37.4811794,
+      "lng": 126.8249094,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": "12:30-23:40",
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/12309168281"
+    },
+    {
+      "id": "node/9093015726",
+      "name": "경인로570 숯불구이",
+      "lat": 37.4864624,
+      "lng": 126.8177205,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/9093015726"
+    },
+    {
+      "id": "way/468968972",
+      "name": "온수도시자연공원",
+      "lat": 37.49422681111111,
+      "lng": 126.82433938888887,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/468968972"
+    },
+    {
+      "id": "node/368654601",
+      "name": "수궁동문고",
+      "lat": 37.493651,
+      "lng": 126.831117,
+      "types": [
+        "공부"
+      ],
+      "kind": "도서관",
+      "amenity": "library",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/368654601"
+    },
+    {
+      "id": "way/725217531",
+      "name": "우신빌라 공원",
+      "lat": 37.494775257142855,
+      "lng": 126.82863898928572,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/725217531"
+    },
+    {
+      "id": "node/8499393661",
+      "name": "맘스터치",
+      "lat": 37.479947,
+      "lng": 126.8231114,
+      "types": [
+        "식사"
+      ],
+      "kind": "패스트푸드",
+      "amenity": "fast_food",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/8499393661"
+    },
+    {
+      "id": "way/1123783861",
+      "name": "도요새공원",
+      "lat": 37.48856002,
+      "lng": 126.8148332,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/1123783861"
+    },
+    {
+      "id": "way/725217523",
+      "name": "삭새어린이공원",
+      "lat": 37.4965175375,
+      "lng": 126.82536157500002,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/725217523"
+    },
+    {
+      "id": "way/468970739",
+      "name": "갈매공원",
+      "lat": 37.49677242,
+      "lng": 126.82292516,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/468970739"
+    },
+    {
+      "id": "way/1330176086",
+      "name": "천왕산 책쉼터",
+      "lat": 37.4785838,
+      "lng": 126.83084841333333,
+      "types": [
+        "공부"
+      ],
+      "kind": "도서관",
+      "amenity": "library",
+      "openingHours": "Tu-Su 10:00-18:00",
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/1330176086"
+    },
+    {
+      "id": "node/5933310597",
+      "name": "채선당 천왕역점",
+      "lat": 37.4864658,
+      "lng": 126.8381654,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/5933310597"
+    },
+    {
+      "id": "node/8487678054",
+      "name": "Domino's",
+      "lat": 37.487789,
+      "lng": 126.8382578,
+      "types": [
+        "식사"
+      ],
+      "kind": "패스트푸드",
+      "amenity": "fast_food",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/8487678054"
+    },
+    {
+      "id": "node/5933310595",
+      "name": "빽다방",
+      "lat": 37.486594,
+      "lng": 126.8383037,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/5933310595"
+    },
+    {
+      "id": "node/5933310594",
+      "name": "롯데리아",
+      "lat": 37.4867489,
+      "lng": 126.8383809,
+      "types": [
+        "식사"
+      ],
+      "kind": "패스트푸드",
+      "amenity": "fast_food",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/5933310594"
+    },
+    {
+      "id": "node/9093015800",
+      "name": "농협목우촌웰빙마을청춘옥점",
+      "lat": 37.4868418,
+      "lng": 126.8131925,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/9093015800"
+    },
+    {
+      "id": "node/8487678053",
+      "name": "대구반야월막창",
+      "lat": 37.4876613,
+      "lng": 126.8384482,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/8487678053"
+    },
+    {
+      "id": "node/8487678052",
+      "name": "삼대족발",
+      "lat": 37.4875597,
+      "lng": 126.8385263,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/8487678052"
+    },
+    {
+      "id": "node/13256189301",
+      "name": "메가MGC커피",
+      "lat": 37.4860985,
+      "lng": 126.8388611,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/13256189301"
+    },
+    {
+      "id": "node/368653899",
+      "name": "오류2동문고",
+      "lat": 37.488648,
+      "lng": 126.839179,
+      "types": [
+        "공부"
+      ],
+      "kind": "도서관",
+      "amenity": "library",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/368653899"
+    },
+    {
+      "id": "way/468997228",
+      "name": "연지근린공원",
+      "lat": 37.48092179347826,
+      "lng": 126.83662803478262,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/468997228"
+    },
+    {
+      "id": "way/1314078296",
+      "name": "이디야커피",
+      "lat": 37.48625626,
+      "lng": 126.81212104000001,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/1314078296"
+    },
+    {
+      "id": "way/468970750",
+      "name": "온수힐스테이트 공원",
+      "lat": 37.49800711428571,
+      "lng": 126.82164194285714,
+      "types": [
+        "산책",
+        "휴식"
+      ],
+      "kind": "공원",
+      "amenity": "park",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/468970750"
+    },
+    {
+      "id": "node/5933283672",
+      "name": "이바돔 감자탕",
+      "lat": 37.4864273,
+      "lng": 126.8396246,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": "24/7",
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/5933283672"
+    },
+    {
+      "id": "way/986516230",
+      "name": "비맨션",
+      "lat": 37.47985046,
+      "lng": 126.81508602,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": "10:00-22:00",
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/986516230"
+    },
+    {
+      "id": "way/669984124",
+      "name": "원조춘천숯불닭갈비",
+      "lat": 37.486691179999994,
+      "lng": 126.81104988,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/669984124"
+    },
+    {
+      "id": "node/9093015721",
+      "name": "원할머니보쌈부천역곡점",
+      "lat": 37.4855493,
+      "lng": 126.8110326,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/9093015721"
+    },
+    {
+      "id": "node/6269380387",
+      "name": "CGV",
+      "lat": 37.4843555,
+      "lng": 126.8112467,
+      "types": [
+        "놀거리"
+      ],
+      "kind": "영화관",
+      "amenity": "cinema",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/6269380387"
+    },
+    {
+      "id": "node/5177897135",
+      "name": "셀렉토 커피",
+      "lat": 37.4941085,
+      "lng": 126.8388741,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/5177897135"
+    },
+    {
+      "id": "node/9108336439",
+      "name": "더벤티",
+      "lat": 37.4772376,
+      "lng": 126.8170279,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "cafe",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/9108336439"
+    },
+    {
+      "id": "way/669494142",
+      "name": "지군포차",
+      "lat": 37.48576002,
+      "lng": 126.81029028,
+      "types": [
+        "식사"
+      ],
+      "kind": "음식점",
+      "amenity": "restaurant",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/way/669494142"
+    },
+    {
+      "id": "node/4629000439",
+      "name": "뚜드려게임센터",
+      "lat": 37.4856819,
+      "lng": 126.8102877,
+      "types": [
+        "놀거리"
+      ],
+      "kind": "게임센터",
+      "amenity": "amusement_arcade",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/4629000439"
+    },
+    {
+      "id": "node/368656586",
+      "name": "꿈나무가족작은도서관",
+      "lat": 37.4826229,
+      "lng": 126.8102621,
+      "types": [
+        "공부"
+      ],
+      "kind": "도서관",
+      "amenity": "library",
+      "openingHours": null,
+      "access": null,
+      "source": "https://www.openstreetmap.org/node/368656586"
+    }
+  ]
+}

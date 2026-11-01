@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>쉬는사이 · 공강 활용</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23285c42%27/%3E%3Cpath d=%27M23 19v26M41 19v26%27 stroke=%27white%27 stroke-width=%278%27/%3E%3C/svg%3E">
+<style>
+    :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        color: #24382e;
+        background: #f5f6f2
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    body {
+        margin: 0
+    }
+
+    header {
+        border-bottom: 1px solid #dde3d9;
+        background: #fff;
+        padding: 25px max(24px, calc((100% - 1120px)/2));
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    h1 {
+        font-size: 25px;
+        margin: 0;
+        color: #285c42
+    }
+
+    header small {
+        display: block;
+        color: #737e73;
+        margin-top: 6px
+    }
+
+    .tag {
+        font-size: 13px;
+        border: 1px solid #dce4d9;
+        padding: 8px 12px;
+        border-radius: 20px
+    }
+
+    main {
+        max-width: 1168px;
+        margin: auto;
+        padding: 30px 24px
+    }
+
+    h2 {
+        font-size: 19px;
+        margin: 0 0 16px
+    }
+
+    h3 {
+        font-size: 16px;
+        margin: 0 0 8px
+    }
+
+    p {
+        line-height: 1.6
+    }
+
+    button,
+    input,
+    select {
+        font: inherit
+    }
+
+    button {
+        cursor: pointer;
+        border: 1px solid #d7dfd4;
+        background: #fff;
+        padding: 10px 14px;
+        border-radius: 8px;
+        color: inherit
+    }
+
+    button:hover {
+        border-color: #386b4c
+    }
+
+    button.active,
+    .primary {
+        background: #285c42;
+        color: #fff;
+        border-color: #285c42
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+        outline: 3px solid #87b398;
+        outline-offset: 3px
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #ccd5c9;
+        border-radius: 7px;
+        background: white;
+        color: inherit
+    }
+
+    label {
+        font-size: 13px;
+        display: block;
+        margin-bottom: 7px
+    }
+
+    .intro {
+        margin-bottom: 26px
+    }
+
+    .intro h2 {
+        font-size: 27px;
+        margin-bottom: 8px
+    }
+
+    .muted {
+        color: #6c786e;
+        font-size: 14px
+    }
+
+    .layout {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 22px;
+        align-items: start
+    }
+
+    .panel {
+        background: white;
+        border: 1px solid #dfe5dc;
+        border-radius: 14px;
+        padding: 24px;
+        margin-bottom: 22px
+    }
+
+    .row {
+        display: flex;
+        gap: 10px;
+        align-items: center
+    }
+
+    .row>* {
+        flex: 1
+    }
+
+    .field {
+        margin-bottom: 14px
+    }
+
+    .days,
+    .activities,
+    .gaps {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap
+    }
+
+    .days button {
+        padding: 9px 12px
+    }
+
+    .classes {
+        margin: 16px 0
+    }
+
+    .class {
+        padding: 13px 0;
+        border-bottom: 1px solid #edf0e9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .class small {
+        display: block;
+        margin-top: 5px;
+        color: #6c786e
+    }
+
+    .delete {
+        font-size: 12px;
+        padding: 6px 9px
+    }
+
+    .empty {
+        padding: 20px 0;
+        color: #718071;
+        font-size: 14px;
+        line-height: 1.7
+    }
+
+    .notice {
+        font-size: 13px;
+        line-height: 1.65;
+        background: #f4f5ed;
+        padding: 12px;
+        border-radius: 7px;
+        margin: 14px 0
+    }
+
+    .gap {
+        flex: 1;
+        min-width: 160px;
+        text-align: left
+    }
+
+    .gap small {
+        display: block;
+        margin-top: 6px
+    }
+
+    .activities {
+        margin: 16px 0
+    }
+
+    .results {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px
+    }
+
+    .place {
+        border: 1px solid #e0e6dc;
+        border-radius: 10px;
+        padding: 18px
+    }
+
+    .place p {
+        font-size: 13px;
+        margin: 8px 0;
+        color: #697569
+    }
+
+    .badge {
+        font-size: 12px;
+        color: #55705a
+    }
+
+    .time {
+        font-size: 21px;
+        font-weight: 650;
+        margin: 14px 0 6px
+    }
+
+    .status {
+        font-size: 13px;
+        min-height: 22px;
+        line-height: 1.5;
+        color: #a23d2e;
+        margin-top: 10px
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+        border-radius: 9px;
+        background: #eef1ea
+    }
+
+    a {
+        color: #285c42
+    }
+
+    .small {
+        font-size: 12px
+    }
+
+    footer {
+        font-size: 12px;
+        color: #7c867d;
+        margin: 15px 0
+    }
+
+    .full {
+        width: 100%
+    }
+
+    @media(max-width:780px) {
+        .layout {
+            grid-template-columns: 1fr
+        }
+
+        main {
+            padding: 24px 16px
+        }
+
+        header {
+            padding: 20px
+        }
+
+        .panel {
+            padding: 20px
+        }
+
+        .results {
+            grid-template-columns: 1fr
+        }
+
+        .intro h2 {
+            font-size: 23px
+        }
+    }
+
+    /* 지도 중심 레이아웃 */
+    main {
+        max-width: 1600px;
+        padding: 24px 28px
+    }
+
+    header {
+        padding: 20px 28px
+    }
+
+    .intro {
+        margin-bottom: 20px
+    }
+
+    .intro h2 {
+        font-size: 24px
+    }
+
+    .layout {
+        grid-template-columns: minmax(0, 1fr) 370px;
+        gap: 20px
+    }
+
+    .map-column {
+        min-width: 0;
+        position: sticky;
+        top: 20px
+    }
+
+    .panel {
+        padding: 20px;
+        margin-bottom: 16px
+    }
+
+    .map-panel {
+        padding: 0;
+        overflow: hidden
+    }
+
+    .map-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px
+    }
+
+    .map-heading h2 {
+        margin-bottom: 6px
+    }
+
+    .map-heading a {
+        font-size: 13px;
+        white-space: nowrap
+    }
+
+    #map {
+        height: clamp(440px, 58vh, 760px);
+        position: relative;
+        background: #eaf0e6
+    }
+
+    #map iframe {
+        height: 100%;
+        border-radius: 0
+    }
+
+    .map-placeholder {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+        background: linear-gradient(35deg, transparent 48%, #fff8 49%, #fff8 51%, transparent 52%), linear-gradient(145deg, #e6eddf, #f3f4ec);
+        background-size: 130px 130px, 100% 100%
+    }
+
+    .map-placeholder p {
+        margin: 6px 0 14px
+    }
+
+    .map-pin {
+        font-size: 48px;
+        color: #477856
+    }
+
+    #mapstatus {
+        margin: 0;
+        padding: 12px 20px;
+        line-height: 1.6
+    }
+
+    .place.selected {
+        border: 2px solid #285c42;
+        padding: 17px
+    }
+
+    .place button {
+        margin-top: 8px;
+        width: 100%;
+        font-size: 13px
+    }
+
+    .controls h2 {
+        font-size: 17px
+    }
+
+    .controls .days {
+        gap: 5px
+    }
+
+    .controls .days button {
+        padding: 8px 10px
+    }
+
+    .classes {
+        max-height: 260px;
+        overflow: auto
+    }
+
+    .class>div {
+        overflow-wrap: anywhere;
+        min-width: 0
+    }
+
+    .gap {
+        min-width: 130px
+    }
+
+    .place-pin {
+        background: #285c42;
+        border: 2px solid white;
+        border-radius: 18px;
+        padding: 7px 11px;
+        color: white;
+        font-size: 12px;
+        white-space: nowrap;
+        box-shadow: 0 2px 6px #0003
+    }
+
+    .place-pin.selected {
+        background: #a54d28
+    }
+
+    .map-heading .muted {
+        font-size: 13px
+    }
+
+    @media(max-width:900px) {
+        .layout {
+            grid-template-columns: minmax(0, 1fr) 320px
+        }
+
+        .map-heading {
+            align-items: flex-start
+        }
+
+        .map-heading .muted {
+            display: none
+        }
+    }
+
+    @media(max-width:700px) {
+        main {
+            padding: 20px 14px
+        }
+
+        .layout {
+            grid-template-columns: 1fr
+        }
+
+        .map-column {
+            position: static
+        }
+
+        #map {
+            height: 380px
+        }
+
+        .results {
+            grid-template-columns: 1fr
+        }
+
+        .map-heading {
+            padding: 16px
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column
+        }
+
+        .controls .panel {
+            width: 100%
+        }
+
+        .intro h2 {
+            font-size: 22px
+        }
+
+        .map-heading h2 {
+            font-size: 17px
+        }
+    }
+</style>
+<header>
+    <div>
+        <h1>쉬는사이</h1><small>시간표 기반 공강 활용 추천</small>
+    </div><span class="tag">성공회대학교</span>
+</header>
+<main>
+    <div class="intro">
+        <h2>다음 수업 전까지, 뭐 할까?</h2>
+        <div class="muted">공강과 활동을 고르고 지도에서 갈 곳을 살펴보세요.</div>
+    </div>
+    <div class="layout">
+        <div class="map-column">
+            <section class="panel map-panel">
+                <div class="map-heading">
+                    <div>
+                        <h2>성공회대학교 주변</h2><span id="mapcaption" class="muted">공강에 맞는 장소를 지도에서 확인하세요.</span>
+                    </div><a id="maplink" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+                </div>
+                <div id="map">
+                    <div class="map-placeholder"><span class="map-pin">⌖</span>
+                        <h3>지도로 공강을 살펴보세요</h3>
+                        <p>네이버 지도 연결을 기다리고 있습니다.</p>
+                        <p class="small">키를 설정하기 전에도 시간표와 추천 계산을 사용할 수 있습니다.</p><button id="mapload">임시 주변 지도
+                            보기</button>
+                    </div>
+                </div>
+                <p id="mapstatus" class="small muted" role="status">주변 장소를 지도에서 확인하세요.</p>
+            </section>
+            <section class="panel">
+                <div class="row"><h2>공강에 맞는 장소</h2><button id="searchnaver" type="button">네이버 장소 더 찾기</button></div><p id="searchstatus" class="small muted" role="status"></p>
+                <div id="summary" class="muted"></div>
+                <div id="routeinfo" class="notice" role="status">장소의 ‘도보 길찾기’를 누르면 경로와 왕복 이동 시간을 확인할 수 있습니다.</div><div id="results" class="results" style="margin-top:16px"></div>
+            </section>
+        </div>
+        <aside class="controls">
+            <section class="panel">
+                <h2>02 공강 선택</h2>
+                <nav class="days" id="days" aria-label="공강 요일"></nav>
+                <div id="gaps" class="gaps" style="margin-top:18px"></div>
+            </section>
+            <section class="panel">
+                <h2>이동 수단</h2><div class="activities"><button id="automode" class="active" aria-pressed="true">자동</button><button id="walkmode" aria-pressed="false">도보만</button></div><p id="transportnote" class="small muted">가까운 곳은 도보, 먼 곳은 대중교통과 비교해 빠른 쪽으로 계산합니다.</p><h2>하고 싶은 활동</h2>
+                <div class="activities" id="activities"></div>
+                <div class="notice">길찾기 전에는 거리로 시간을 추정합니다. 도보 길찾기를 조회하면 경로에서 계산한 시간으로 갱신합니다. 영업 여부와 이용 조건은 방문 전에 확인하세요.</div>
+            </section>
+            <section class="panel">
+                <h2>01 시간표 등록</h2>
+                <form id="form">
+                    <div class="field"><label for="day">요일</label><select id="day">
+                            <option value="0">월요일</option>
+                            <option value="1">화요일</option>
+                            <option value="2">수요일</option>
+                            <option value="3">목요일</option>
+                            <option value="4">금요일</option>
+                            <option value="5">토요일</option>
+                            <option value="6">일요일</option>
+                        </select></div>
+                    <div class="field"><label for="subject">과목명</label><input id="subject" maxlength="50" required
+                            placeholder="예: 인공지능"></div>
+                    <div class="row field">
+                        <div><label for="start">시작 시간</label><input id="start" type="time" required value="12:00"></div>
+                        <div><label for="end">종료 시간</label><input id="end" type="time" required value="14:00"></div>
+                    </div><button class="primary full">수업 추가</button>
+                </form>
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+                <div class="row">
+                    <h3>등록한 수업</h3><button id="sample" type="button" class="small">예시 시간표 넣기</button>
+                </div>
+                <div id="classes" class="classes"></div>
+                <div class="muted small">이 브라우저에 자동 저장됩니다. 예시 시간표는 월요일에 추가됩니다.</div>
+            </section>
+        </aside>
+    </div>
+    <footer><p>도보 경로: <a href="https://routing.openstreetmap.de/about.html" target="_blank" rel="noopener noreferrer">FOSSGIS / OSRM</a> · <a href="https://www.openstreetmap.org/edit?editor=id&amp;lat=37.48752&amp;lon=126.825799#map=16/37.48752/126.825799" target="_blank" rel="noopener noreferrer">지도 정보 수정</a></p><p>장소 데이터: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors · ODbL</a> · 2026-11-02 수집 · 학교 중심 반경 1.5km · 이름 있는 등록 장소 41곳 · server.py 실행 시 <a href="https://api.ncloud-docs.com/docs/naver-api-hub-search-local" target="_blank" rel="noopener noreferrer">네이버 지역 검색</a> 결과(학교 1.8km 이내, 대중교통 키가 있으면 4km 이내)를 함께 사용하며 식사·카페는 네이버 결과를 우선합니다.</p>쉬는사이 초기 개발 버전 · 출발 및 복귀 기준은 성공회대학교로 가정합니다.</footer>
+</main>
+<script>
+    'use strict';
+    // 네이버 클라우드 Maps > Application의 Client ID를 아래 따옴표 안에 입력합니다.
+    // Client Secret은 여기에 넣지 않습니다. 현재 단일 HTML에서는 .env를 읽지 않습니다.
+    const NAVER_MAP_CLIENT_ID = '698xd5jb6l';
+    // OSM 성공회대학교 영역의 노드 평균을 초기 중심점으로 사용합니다.
+    const CAMPUS = {"lat": 37.487519750000004, "lng": 126.82579907777777};
+
+    const KEY = 'swim-sai-timetable-v1', DAYS = ['월', '화', '수', '목', '금', '토', '일'], ACTIVITIES = ['식사', '카페', '공부', '산책', '놀거리', '휴식'];
+    // OpenStreetMap에서 2026-11-02 수집한 실재 장소 스냅샷. 원본/라이선스: 장소데이터.json
+    const PLACES = [{"id": "way/1330375758", "name": "푸른수목원 KB숲교육센터", "lat": 37.4854242375, "lng": 126.82759425, "types": ["산책", "휴식"], "kind": "정원", "amenity": "garden", "openingHours": null, "access": "yes", "source": "https://www.openstreetmap.org/way/1330375758"}, {"id": "way/1330376393", "name": "항동푸른도서관", "lat": 37.48461086, "lng": 126.82479268, "types": ["공부"], "kind": "도서관", "amenity": "library", "openingHours": "tu-fr 09:00-21:00, sa-su 09:00-17:00", "access": null, "source": "https://www.openstreetmap.org/way/1330376393"}, {"id": "node/368656618", "name": "유한대학 도서관", "lat": 37.4867801, "lng": 126.8219677, "types": ["공부"], "kind": "도서관", "amenity": "library", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/368656618"}, {"id": "node/7045880038", "name": "장미원", "lat": 37.4848096, "lng": 126.82376, "types": ["산책", "휴식"], "kind": "정원", "amenity": "garden", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/7045880038"}, {"id": "way/465669376", "name": "푸른수목원", "lat": 37.484231471428565, "lng": 126.82522914571429, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/465669376"}, {"id": "node/12309209206", "name": "푸른카페 푸른수목원점", "lat": 37.4825721, "lng": 126.8236957, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/12309209206"}, {"id": "way/1330204476", "name": "9로평상", "lat": 37.4821844, "lng": 126.82611423333333, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": "Mo-Su 10:00-22:00", "access": null, "source": "https://www.openstreetmap.org/way/1330204476"}, {"id": "node/12309209738", "name": "그리니치카페", "lat": 37.4815243, "lng": 126.8237473, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": "Mo-Su 09:00-21:00", "access": null, "source": "https://www.openstreetmap.org/node/12309209738"}, {"id": "node/12309196803", "name": "진원반찬", "lat": 37.4812441, "lng": 126.8248659, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": "Mo-Sa 09:00-20:00", "access": null, "source": "https://www.openstreetmap.org/node/12309196803"}, {"id": "node/12309168281", "name": "항동회수산", "lat": 37.4811794, "lng": 126.8249094, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": "12:30-23:40", "access": null, "source": "https://www.openstreetmap.org/node/12309168281"}, {"id": "node/9093015726", "name": "경인로570 숯불구이", "lat": 37.4864624, "lng": 126.8177205, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/9093015726"}, {"id": "way/468968972", "name": "온수도시자연공원", "lat": 37.49422681111111, "lng": 126.82433938888887, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/468968972"}, {"id": "node/368654601", "name": "수궁동문고", "lat": 37.493651, "lng": 126.831117, "types": ["공부"], "kind": "도서관", "amenity": "library", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/368654601"}, {"id": "way/725217531", "name": "우신빌라 공원", "lat": 37.494775257142855, "lng": 126.82863898928572, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/725217531"}, {"id": "node/8499393661", "name": "맘스터치", "lat": 37.479947, "lng": 126.8231114, "types": ["식사"], "kind": "패스트푸드", "amenity": "fast_food", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/8499393661"}, {"id": "way/1123783861", "name": "도요새공원", "lat": 37.48856002, "lng": 126.8148332, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/1123783861"}, {"id": "way/725217523", "name": "삭새어린이공원", "lat": 37.4965175375, "lng": 126.82536157500002, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/725217523"}, {"id": "way/468970739", "name": "갈매공원", "lat": 37.49677242, "lng": 126.82292516, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/468970739"}, {"id": "way/1330176086", "name": "천왕산 책쉼터", "lat": 37.4785838, "lng": 126.83084841333333, "types": ["공부"], "kind": "도서관", "amenity": "library", "openingHours": "Tu-Su 10:00-18:00", "access": null, "source": "https://www.openstreetmap.org/way/1330176086"}, {"id": "node/5933310597", "name": "채선당 천왕역점", "lat": 37.4864658, "lng": 126.8381654, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/5933310597"}, {"id": "node/8487678054", "name": "Domino's", "lat": 37.487789, "lng": 126.8382578, "types": ["식사"], "kind": "패스트푸드", "amenity": "fast_food", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/8487678054"}, {"id": "node/5933310595", "name": "빽다방", "lat": 37.486594, "lng": 126.8383037, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/5933310595"}, {"id": "node/5933310594", "name": "롯데리아", "lat": 37.4867489, "lng": 126.8383809, "types": ["식사"], "kind": "패스트푸드", "amenity": "fast_food", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/5933310594"}, {"id": "node/9093015800", "name": "농협목우촌웰빙마을청춘옥점", "lat": 37.4868418, "lng": 126.8131925, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/9093015800"}, {"id": "node/8487678053", "name": "대구반야월막창", "lat": 37.4876613, "lng": 126.8384482, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/8487678053"}, {"id": "node/8487678052", "name": "삼대족발", "lat": 37.4875597, "lng": 126.8385263, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/8487678052"}, {"id": "node/13256189301", "name": "메가MGC커피", "lat": 37.4860985, "lng": 126.8388611, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/13256189301"}, {"id": "node/368653899", "name": "오류2동문고", "lat": 37.488648, "lng": 126.839179, "types": ["공부"], "kind": "도서관", "amenity": "library", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/368653899"}, {"id": "way/468997228", "name": "연지근린공원", "lat": 37.48092179347826, "lng": 126.83662803478262, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/468997228"}, {"id": "way/1314078296", "name": "이디야커피", "lat": 37.48625626, "lng": 126.81212104000001, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/1314078296"}, {"id": "way/468970750", "name": "온수힐스테이트 공원", "lat": 37.49800711428571, "lng": 126.82164194285714, "types": ["산책", "휴식"], "kind": "공원", "amenity": "park", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/468970750"}, {"id": "node/5933283672", "name": "이바돔 감자탕", "lat": 37.4864273, "lng": 126.8396246, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": "24/7", "access": null, "source": "https://www.openstreetmap.org/node/5933283672"}, {"id": "way/986516230", "name": "비맨션", "lat": 37.47985046, "lng": 126.81508602, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": "10:00-22:00", "access": null, "source": "https://www.openstreetmap.org/way/986516230"}, {"id": "way/669984124", "name": "원조춘천숯불닭갈비", "lat": 37.486691179999994, "lng": 126.81104988, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/669984124"}, {"id": "node/9093015721", "name": "원할머니보쌈부천역곡점", "lat": 37.4855493, "lng": 126.8110326, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/9093015721"}, {"id": "node/6269380387", "name": "CGV", "lat": 37.4843555, "lng": 126.8112467, "types": ["놀거리"], "kind": "영화관", "amenity": "cinema", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/6269380387"}, {"id": "node/5177897135", "name": "셀렉토 커피", "lat": 37.4941085, "lng": 126.8388741, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/5177897135"}, {"id": "node/9108336439", "name": "더벤티", "lat": 37.4772376, "lng": 126.8170279, "types": ["카페"], "kind": "카페", "amenity": "cafe", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/9108336439"}, {"id": "way/669494142", "name": "지군포차", "lat": 37.48576002, "lng": 126.81029028, "types": ["식사"], "kind": "음식점", "amenity": "restaurant", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/way/669494142"}, {"id": "node/4629000439", "name": "뚜드려게임센터", "lat": 37.4856819, "lng": 126.8102877, "types": ["놀거리"], "kind": "게임센터", "amenity": "amusement_arcade", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/4629000439"}, {"id": "node/368656586", "name": "꿈나무가족작은도서관", "lat": 37.4826229, "lng": 126.8102621, "types": ["공부"], "kind": "도서관", "amenity": "library", "openingHours": null, "access": null, "source": "https://www.openstreetmap.org/node/368656586"}];
+    function minutes(t) { if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(t)) return NaN; return Number(t.slice(0, 2)) * 60 + Number(t.slice(3)); }
+    function time(n) { return `${String(Math.floor(n / 60)).padStart(2, '0')}:${String(n % 60).padStart(2, '0')}`; }
+    function valid(c) { return c && Number.isInteger(c.day) && c.day >= 0 && c.day < 7 && typeof c.subject === 'string' && c.subject.trim().length > 0 && c.subject.length <= 50 && Number.isFinite(minutes(c.start)) && minutes(c.end) > minutes(c.start) && typeof c.id === 'string'; }
+    function getGaps(classes, day) { const list = classes.filter(c => c.day === day).slice().sort((a, b) => minutes(a.start) - minutes(b.start)); const gaps = []; let end = null; for (const c of list) { const s = minutes(c.start), e = minutes(c.end); if (end !== null && s > end) gaps.push({ start: end, end: s, duration: s - end }); end = Math.max(end ?? 0, e); } return gaps; }
+    function distanceMeters(a,b) {
+        const rad=x=>x*Math.PI/180, dlat=rad(b.lat-a.lat),dlng=rad(b.lng-a.lng);
+        const h=Math.sin(dlat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dlng/2)**2;
+        return 6371000*2*Math.asin(Math.sqrt(Math.min(1,h)));
+    }
+    const routeCache=new Map(), extraPlaces=[];let transportMode='auto';
+    // 자동 모드: 학교에서 직선 700m 이상인 장소는 대중교통(ODsay)도 조회해 도보와 비교한다. 700m 미만은 ODsay가 경로를 주지 않는다(-98).
+    const TRANSIT_MIN_DISTANCE=700, transitFailed=new Set();let transitEnabled=false, transitBlocked=false;
+    function formatHours(value){const days={Mo:'월',Tu:'화',We:'수',Th:'목',Fr:'금',Sa:'토',Su:'일',PH:'공휴일'};return value.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\b/gi,d=>days[Object.keys(days).find(k=>k.toLowerCase()===d.toLowerCase())]).replace(/\boff\b/g,'휴무').replace(/\bopen\b/g,'영업').replace(/24\/7/g,'매일 24시간');}
+    // 네이버 검색 결과를 먼저 넣고, 같은 장소(이름 같고 100m 이내)인 OSM 항목은 뺀다.
+    function allPlaces(){const result=[...extraPlaces];for(const p of PLACES){const duplicate=result.find(x=>x.name.replace(/\s/g,'')===p.name.replace(/\s/g,'')&&distanceMeters(x,p)<100);if(!duplicate)result.push(p);}return result;}
+    // 식사·카페는 네이버 결과가 있으면 네이버만 쓴다. 서버 없이 열거나 검색 실패 시 OSM 스냅샷으로 대체.
+    const NAVER_PRIMARY=['식사','카페'];
+    function placesFor(type){const list=allPlaces().filter(p=>p.types.includes(type));return NAVER_PRIMARY.includes(type)&&list.some(p=>p.provider==='naver')?list.filter(p=>p.provider==='naver'):list;}
+    function candidates(type) {
+        const stayByType={'식사':40,'카페':30,'공부':60,'산책':30,'놀거리':60,'휴식':20};
+        return placesFor(type).map(p=>{
+            const distance=Math.round(distanceMeters(CAMPUS,p));
+            // 직선거리의 1.4배를 이동거리로 가정, 분당 70m 보행 + 편도 준비 여유 3분.
+            const walk=Math.ceil(distance*1.4/70)+3;
+            const stay=p.amenity==='cinema'?150:stayByType[type];
+            // 교내 장소는 OSM 보행 경로가 교내 길과 연결되지 않아 학교 밖으로 돌아가므로 길찾기 없이 거리 추정만 쓴다.
+            if(p.onCampus)return {...p,type,distance,walk,stay,route:null,transit:null,via:'walk',transitPending:false,transitFloor:null,total:walk*2+stay+10};
+            const route=routeCache.get(p.id),walkTotal=(route?route.minutes:walk*2)+stay+10;
+            const far=transportMode==='auto'&&distance>=TRANSIT_MIN_DISTANCE,transit=far?routeCache.get('transit:'+p.id)||null:null,transitTotal=transit?transit.minutes+stay+10:null;
+            const via=transitTotal!==null&&transitTotal<walkTotal?'transit':'walk',transitPending=far&&!transit&&transitEnabled&&!transitBlocked&&!transitFailed.has(p.id);
+            // 대중교통으로도 이보다 빠를 수 없는 하한: 시속 30km(분당 500m)로 직선 왕복 + 대기 여유 10분 + 이용 + 복귀 여유.
+            const transitFloor=far?Math.ceil(2*distance/500)+10+stay+10:null;
+            return {...p,type,distance,walk,stay,route,transit,via,walkTotal,transitTotal,transitPending,transitFloor,total:via==='transit'?transitTotal:walkTotal};
+        }).sort((a,b)=>a.total-b.total||a.distance-b.distance);
+    }
+    function recommend(gap,type){return candidates(type).filter(p=>p.total<=gap.duration||(p.transitPending&&p.transitFloor<=gap.duration));}
+    const $ = id => document.getElementById(id); let classes = [], selectedDay = 0, gapKey = null, activity = '식사', storageWarning = '', selectedPlaceId = null;
+    let naverMap = null, markers = [], currentPlaces = [], sdkState = 'idle', lastFitKey = '';
+    try { const raw = localStorage.getItem(KEY); if (raw) { const parsed = JSON.parse(raw); if (!Array.isArray(parsed) || !parsed.every(valid) || new Set(parsed.map(c => c.id)).size !== parsed.length) throw Error(); classes = parsed; } } catch (e) { storageWarning = '저장된 시간표를 읽지 못했습니다. 새 입력은 저장이 가능할 때 다시 저장됩니다.'; }
+    function save(next) { try { localStorage.setItem(KEY, JSON.stringify(next)); storageWarning = ''; } catch (e) { storageWarning = '브라우저 저장이 불가능해 새로고침하면 변경 내용이 사라질 수 있습니다.'; } classes = next; }
+    function message(t) { $('status').textContent = [t, storageWarning].filter(Boolean).join(' '); }
+    function element(tag, text, cls) { const x = document.createElement(tag); x.textContent = text; if (cls) x.className = cls; return x; }
+    function render() {
+        $('classes').replaceChildren(); const sorted = classes.slice().sort((a, b) => a.day - b.day || minutes(a.start) - minutes(b.start));
+        if (!sorted.length) $('classes').append(element('div', '아직 등록한 수업이 없습니다. 수업 두 개를 입력하거나 예시 시간표를 넣어보세요.', 'empty'));
+        for (const c of sorted) { const box = element('div', '', 'class'), desc = element('div', c.subject); desc.append(element('small', `${DAYS[c.day]}요일 · ${c.start}–${c.end}`)); const del = element('button', '삭제', 'delete'); del.setAttribute('aria-label', `${c.subject} 삭제`); del.onclick = () => { save(classes.filter(x => x.id !== c.id)); render(); message('수업을 삭제했습니다.'); }; box.append(desc, del); $('classes').append(box); }
+        $('days').replaceChildren(); DAYS.forEach((d, i) => { const b = element('button', d, i === selectedDay ? 'active' : ''); b.setAttribute('aria-pressed', String(i === selectedDay)); b.onclick = () => { selectedDay = i; gapKey = null; render(); }; $('days').append(b); });
+        const gaps = getGaps(classes, selectedDay); if (!gaps.some(g => `${g.start}-${g.end}` === gapKey)) gapKey = gaps.length ? `${gaps[0].start}-${gaps[0].end}` : null;
+        $('gaps').replaceChildren(); for (const g of gaps) { const key = `${g.start}-${g.end}`, b = element('button', `${time(g.start)}–${time(g.end)}`, 'gap' + (key === gapKey ? ' active' : '')); b.setAttribute('aria-pressed', String(key === gapKey)); b.append(element('small', `${g.duration}분 공강`)); b.onclick = () => { gapKey = key; render(); }; $('gaps').append(b); }
+        if (!gaps.length) $('gaps').append(element('div', '이 요일에는 계산할 공강이 없습니다. 같은 날 수업 사이에 빈 시간이 있어야 합니다.', 'empty'));
+        $('activities').replaceChildren(); for (const a of ACTIVITIES) { const b = element('button', a, a === activity ? 'active' : ''); b.setAttribute('aria-pressed', String(a === activity)); b.onclick = () => { activity = a; selectedPlaceId = null; clearRoute(); render(); if (naverSearchEnabled && !naverSearched.has(a)) searchNaver(); }; $('activities').append(b); }
+        const gap = gaps.find(g => `${g.start}-${g.end}` === gapKey); $('results').replaceChildren(); $('summary').textContent = gap ? `${gap.duration}분 공강 · 왕복 이동 + 이용 + 복귀 여유 10분 · 길찾기한 장소는 결과 시간 반영` : '주변 장소를 보고 있습니다. 공강을 선택하면 예상 소요 시간으로 걸러집니다.';
+        currentPlaces = gap ? recommend(gap, activity) : candidates(activity); if (!currentPlaces.some(p => p.id === selectedPlaceId)) selectedPlaceId = null;
+        const places = currentPlaces;
+        if (!places.length) $('results').append(element('div', candidates(activity).length ? '이 공강에 맞는 장소가 없습니다. 다른 활동이나 더 긴 공강을 선택해 보세요.' : '이 활동에 해당하는 장소를 이 범위에서 찾지 못했습니다.', 'empty'));
+        for (const place of places) {
+            const card=element('article','','place');card.dataset.placeId=place.id;
+            card.append(element('span',[place.kind,place.onCampus&&'교내',place.provider==='naver'&&'네이버'].filter(Boolean).join(' · '),'badge'),element('h3',`${places.indexOf(place)+1}. ${place.name}`),element('div',`${place.via==='transit'?'대중교통':place.route?'도보 경로':'예상'} ${place.total}분`+(gap&&place.transitPending&&place.total>gap.duration?' · 대중교통이면 가능할 수 있음':''),'time'),element('p',place.onCampus?`교내 건물 · 학교 기준 직선거리 ${place.distance}m · 편도 약 ${place.walk}분 (건물 간 이동 추정)`:place.via==='transit'?`대중교통 왕복 ${place.transit.minutes-place.transit.waitBuffer}분 + 대기 여유 ${place.transit.waitBuffer}분 (가정) · 도보로는 ${place.walkTotal}분`:place.route?`도보 경로 왕복 ${place.route.minutes}분 · ${(place.route.distance/1000).toFixed(2)}km`+(place.transit?` · 대중교통보다 빠름`:''):`학교 기준 직선거리 ${place.distance}m · 편도 약 ${place.walk}분 (길찾기 전 추정)`+(place.transit?' · 대중교통보다 빠름':'')),element('p',`왕복 이동 + 이용 ${place.stay}분 + 복귀 여유 10분`));
+            if(gap)card.append(element('p',place.total<=gap.duration?`시간 조건상 ${gap.duration-place.total}분 여유 (추정)`:'걸어서는 공강을 넘음 · 아래 버튼으로 대중교통 시간을 확인하세요'));
+            if(place.amenity==='library')card.append(element('p','도서관 출입·좌석 이용 조건은 별도 확인이 필요합니다.'));
+            if(place.address)card.append(element('p',place.address));
+            if(place.openingHours)card.append(element('p','운영 시간: '+formatHours(place.openingHours)));
+            const askTransit=place.transitPending&&(place.walk>=20||(gap&&place.total>gap.duration));
+            const show=element('button',place.onCampus?'지도에서 위치 보기':place.via==='transit'?'대중교통 경로 보기':askTransit?'대중교통 시간 확인 (API 1회)':'도보 길찾기');show.onclick=()=>askTransit?selectTransit(place.id):selectPlace(place.id);card.append(show);
+            const links=element('div','','row');links.style.marginTop='12px';
+            if(place.provider==='naver'){const naverLink=element('a','네이버 지도에서 보기 ↗');naverLink.href=place.source;naverLink.target='_blank';naverLink.rel='noopener noreferrer';naverLink.className='small';links.append(naverLink);}
+            else{const source=element('a','원본 정보 ↗');source.href=place.source;source.target='_blank';source.rel='noopener noreferrer';source.className='small';
+                const search=element('a','네이버에서 확인 ↗');search.href='https://map.naver.com/p/search/'+encodeURIComponent(place.name);/* OSM 장소는 주소가 없어 상호만으로 검색 */search.target='_blank';search.rel='noopener noreferrer';search.className='small';links.append(source,search);}
+            card.append(links);$('results').append(card);
+        }
+        const query = `성공회대학교 ${activity}`; $('maplink').href = 'https://map.naver.com/p/search/' + encodeURIComponent(query);
+        $('mapcaption').textContent = gap ? `${DAYS[selectedDay]}요일 ${time(gap.start)}–${time(gap.end)} · ${activity}` : '주변 '+activity+' 장소 · 공강을 선택해 시간 조건으로 좁혀보세요.';
+        syncMarkers();
+
+    }
+    $('form').onsubmit = e => { e.preventDefault(); const c = { id: crypto.randomUUID(), day: Number($('day').value), subject: $('subject').value.trim(), start: $('start').value, end: $('end').value }; if (!valid(c)) { message('과목명과 시간을 확인하세요. 종료 시간은 시작 시간보다 늦어야 합니다.'); return; } if (classes.some(x => x.day === c.day && minutes(c.start) < minutes(x.end) && minutes(c.end) > minutes(x.start))) { message('같은 요일에 시간이 겹치는 수업이 있습니다.'); return; } save([...classes, c]); selectedDay = c.day; gapKey = null; $('subject').value = ''; render(); message('수업을 추가했습니다.'); };
+    $('sample').onclick = () => { if (classes.length) { message('예시 시간표는 등록된 수업이 없을 때 넣을 수 있습니다.'); return; } save([{ id: crypto.randomUUID(), day: 0, subject: '예시 수업 1', start: '12:00', end: '14:00' }, { id: crypto.randomUUID(), day: 0, subject: '예시 수업 2', start: '16:00', end: '18:00' }]); selectedDay = 0; gapKey = null; render(); message('월요일 예시 시간표를 넣었습니다.'); };
+    function focusPlace(id) { selectedPlaceId = id; syncMarkers(); const p = currentPlaces.find(p => p.id === id); if (naverMap && p) naverMap.panTo(new naver.maps.LatLng(p.lat, p.lng)); else $('mapstatus').textContent = '네이버 지도 키를 설정하면 선택한 장소를 마커로 확인할 수 있습니다.'; }
+
+    let routeLine=null, routeToken=0, lastRouteRequest=0, routeBusy=false;
+    function clearRoute(){routeToken++;if(routeLine)routeLine.setMap(null);routeLine=null;$('routeinfo').textContent='장소의 도보 길찾기를 누르면 경로와 이동 시간을 확인할 수 있습니다.';}
+    function drawRoute(route){if(!naverMap)return;if(routeLine)routeLine.setMap(null);routeLine=new naver.maps.Polyline({map:naverMap,path:route.coordinates.map(c=>new naver.maps.LatLng(c[1],c[0])),strokeColor:'#285c42',strokeWeight:5,strokeOpacity:0.85});const bounds=new naver.maps.LatLngBounds();route.coordinates.forEach(c=>bounds.extend(new naver.maps.LatLng(c[1],c[0])));naverMap.fitBounds(bounds);}
+    async function selectPlace(id){
+        const place=allPlaces().find(p=>p.id===id);if(!place)return;
+        if(place.onCampus){clearRoute();focusPlace(id);$('routeinfo').textContent=place.name+' · 교내 건물 안 장소라 경로 조회 없이 거리로 이동 시간을 추정합니다 (편도 약 '+candidates(activity).find(p=>p.id===id)?.walk+'분).';return;}
+        if(candidates(activity).find(p=>p.id===id)?.via==='transit')return selectTransit(id);
+        if(routeBusy&&!routeCache.has(id)){$('routeinfo').textContent='이전 경로를 조회하고 있습니다. 잠시 후 다시 눌러주세요.';return;}
+        focusPlace(id);const token=++routeToken;
+        if(routeLine)routeLine.setMap(null);routeLine=null;
+        let route=routeCache.get(id);
+        if(!route){
+            if(routeBusy){$('routeinfo').textContent='이전 경로를 조회하고 있습니다. 잠시 후 다시 눌러주세요.';return;}
+            routeBusy=true;$('routeinfo').textContent=place.name+'까지 도보 경로를 조회하고 있습니다…';
+            try{
+                await new Promise(resolve=>setTimeout(resolve,Math.max(0,1100-(Date.now()-lastRouteRequest))));lastRouteRequest=Date.now();
+                // routed-foot는 도보 전용 서버이며 자동차 서버를 대신 사용하지 않는다.
+                const coords=`${CAMPUS.lng},${CAMPUS.lat};${place.lng},${place.lat};${CAMPUS.lng},${CAMPUS.lat}`;
+                const response=await fetch('https://routing.openstreetmap.de/routed-foot/route/v1/driving/'+coords+'?overview=full&geometries=geojson&steps=false',{signal:AbortSignal.timeout(18000)});
+                if(!response.ok)throw Error('도보 길찾기 서버 응답 오류');
+                const data=await response.json(),r=data.routes?.[0];
+                if(data.code!=='Ok'||!r||!r.geometry?.coordinates?.length||!Number.isFinite(r.duration)||!Number.isFinite(r.distance))throw Error('이 장소까지의 도보 경로를 찾지 못했습니다.');
+                // 경로 스냅 지점이 학교/장소에서 너무 멀면 사용하지 않는다.
+                if(data.waypoints?.some(w=>w.distance>250))throw Error('출입 위치와 보행 경로가 너무 멀어 시간을 확인할 수 없습니다.');
+                route={minutes:Math.ceil(r.duration/60),distance:r.distance,coordinates:r.geometry.coordinates};routeCache.set(id,route);
+            }catch(e){if(token===routeToken)$('routeinfo').textContent='도보 경로를 가져오지 못했습니다. 잠시 후 다시 시도하세요. 목록에는 거리 기반 추정 시간을 유지합니다.';return;}
+            finally{routeBusy=false;}
+        }
+        if(token!==routeToken)return;
+        render();drawRoute(route);
+        const gaps=getGaps(classes,selectedDay),gap=gaps.find(g=>`${g.start}-${g.end}`===gapKey),candidate=candidates(activity).find(p=>p.id===id);
+        $('routeinfo').textContent=`${place.name} · 도보 왕복 ${route.minutes}분 / ${(route.distance/1000).toFixed(2)}km (길찾기 계산)`+(gap&&candidate?(candidate.total>gap.duration?` · 이용·복귀 여유를 합치면 ${candidate.total}분으로 공강을 초과합니다.`:` · 이용·복귀 여유 포함 ${candidate.total}분`):'')+' · 신호 대기·출입 조건에 따라 달라질 수 있습니다.';
+    }
+
+    function transportNote(){return (transitError&&transportMode==='auto'?'대중교통 조회 실패: '+transitError+' — 해당 장소는 도보로 계산합니다. ':'')+(transportMode==='walk'?'도보 길찾기 시간으로만 계산합니다.':transitEnabled?`학교에서 ${TRANSIT_MIN_DISTANCE}m 이상인 곳은 카드의 ‘대중교통 시간 확인’을 누르면 대중교통(왕복 + 대기 여유 10분 가정)과 도보 중 빠른 쪽으로 다시 계산합니다. 조회 결과는 서버에 저장되어 다시 호출하지 않습니다.`:'대중교통 API 키가 설정되지 않아 지금은 도보로만 계산합니다.');}
+    function changeMode(mode){transportMode=mode;selectedPlaceId=null;clearRoute();for(const [id,m] of [['automode','auto'],['walkmode','walk']]){$(id).classList.toggle('active',m===mode);$(id).setAttribute('aria-pressed',String(m===mode));}$('transportnote').textContent=transportNote();render();}
+    $('automode').onclick=()=>changeMode('auto');$('walkmode').onclick=()=>changeMode('walk');
+    function segmentText(trip){return trip.segments.map(s=>`${s.label}${s.from?' '+s.from+' → '+s.to:''} ${s.minutes}분`).join(' / ');}
+    // 같은 장소를 선조회와 클릭이 동시에 요청하지 않도록 진행 중인 요청을 공유한다.
+    const transitInflight=new Map();
+    function fetchTransit(place){
+        const key='transit:'+place.id;if(routeCache.has(key))return Promise.resolve(routeCache.get(key));if(transitInflight.has(key))return transitInflight.get(key);
+        const job=(async()=>{const response=await fetch('/api/transit?lng='+place.lng+'&lat='+place.lat,{signal:AbortSignal.timeout(28000)});if(response.status===404&&!(response.headers.get('content-type')||'').includes('json'))throw Error('대중교통 조회는 python3 server.py로 실행해 주세요.');const data=await response.json();if(!response.ok)throw Error(data.error||'대중교통 경로를 가져오지 못했습니다.');
+            if(!Number.isFinite(data.minutes)||!Number.isFinite(data.waitBuffer)||!Array.isArray(data.outbound?.segments)||!Array.isArray(data.inbound?.segments))throw Error('대중교통 응답 형식을 확인하지 못했습니다.');
+            const route={...data,transit:true,minutes:data.minutes+data.waitBuffer};routeCache.set(key,route);return route;})().finally(()=>transitInflight.delete(key));
+        transitInflight.set(key,job);return job;
+    }
+    // ODsay 호출 한도가 작아(키당 수십 건) 자동 선조회는 하지 않는다. 대중교통은 카드에서 사용자가 누를 때만 조회한다.
+    let transitError='';
+    async function selectTransit(id){
+        const place=allPlaces().find(p=>p.id===id);if(!place)return;
+        focusPlace(id);if(routeLine)routeLine.setMap(null);routeLine=null;const token=++routeToken;let route=routeCache.get('transit:'+id);
+        if(!route){$('routeinfo').textContent='가는 편과 돌아오는 편 대중교통 경로를 확인하고 있습니다…';try{route=await fetchTransit(place);}catch(e){transitFailed.add(id);transitError=e.message;if(e.message.startsWith('ODsay 오류')&&!e.message.includes('(429)'))transitBlocked=true;$('transportnote').textContent=transportNote();render();if(token===routeToken)$('routeinfo').textContent=e.message;return;}}
+        if(token!==routeToken)return;render();const candidate=candidates(activity).find(p=>p.id===id),gap=getGaps(classes,selectedDay).find(g=>`${g.start}-${g.end}`===gapKey);
+        $('routeinfo').textContent=place.name+' · 가는 편: '+segmentText(route.outbound)+' · 오는 편'+(route.inbound.assumed?'(가는 편과 같다고 가정)':'')+': '+segmentText(route.inbound)+` · 왕복 ${route.minutes-route.waitBuffer}분 + 대기 여유 ${route.waitBuffer}분(가정)`+(gap&&candidate?(candidate.total>gap.duration?' · 공강 시간 초과':` · 이용·복귀 여유 포함 ${candidate.total}분`):'')+' · 지도 도로 경로선과 실시간 버스 도착 정보는 아직 표시하지 않습니다.';
+    }
+
+    // server.py로 실행했고 검색 키가 설정돼 있으면 활동을 고를 때 자동 검색한다. 활동별로 한 번만 성공 처리.
+    let naverSearchEnabled=false;const naverSearched=new Set(),naverPending=new Set(),naverTried=new Set();
+    async function searchNaver(){
+        const button=$('searchnaver'),type=activity;if(naverPending.has(type))return;naverPending.add(type);button.disabled=true;$('searchstatus').textContent=`네이버에서 주변 ${type} 장소를 검색하고 있습니다…`;
+        try{const response=await fetch('/api/places?activity='+encodeURIComponent(type),{signal:AbortSignal.timeout(20000)});if(response.status===404)throw Error('네이버 장소 검색은 python3 server.py로 실행해야 사용할 수 있습니다.');const data=await response.json();if(!response.ok)throw Error(data.error||'장소 검색 실패');
+            let added=0;for(const p of data.places||[]){if(typeof p.id==='string'&&typeof p.name==='string'&&Array.isArray(p.types)&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)){const old=extraPlaces.find(x=>x.id===p.id);if(old)old.types=[...new Set([...old.types,...p.types])];else{extraPlaces.push(p);added++;}}}
+            naverSearched.add(type);render();
+            const own=extraPlaces.filter(p=>p.types.includes(type)).length;
+            $('searchstatus').textContent=own?`네이버 지역 검색 결과 ${own}곳을 반영했습니다.`+(NAVER_PRIMARY.includes(type)?' 이 활동은 네이버 결과만 표시합니다.':' 기본 장소와 겹치는 곳은 한 번만 표시합니다.'):`네이버 검색에서 학교 주변 ${type} 장소를 찾지 못해 기본(OSM) 장소를 표시합니다.`;
+        }catch(e){$('searchstatus').textContent=e.message+' 기본(OSM) 장소를 표시합니다.';}
+        finally{naverPending.delete(type);naverTried.add(type);button.disabled=false;}
+    }
+    $('searchnaver').onclick=searchNaver;
+    async function initNaverSearch(){
+        if(location.protocol==='file:')return;
+        try{const response=await fetch('/api/config',{signal:AbortSignal.timeout(5000)});if(!response.ok)return;const config=await response.json();naverSearchEnabled=config.naverSearch===true;transitEnabled=config.transit===true;}catch(e){return;}
+        $('transportnote').textContent=transportNote();if(transitEnabled)render();
+        if(naverSearchEnabled)searchNaver();else $('searchstatus').textContent='네이버 검색 키가 설정되지 않아 기본(OSM) 장소를 표시합니다.';
+    }
+
+    function syncMarkers() {
+        document.querySelectorAll('.place').forEach(c => c.classList.toggle('selected', c.dataset.placeId === selectedPlaceId));
+        if (!naverMap) return;
+        markers.forEach(m => m.setMap(null)); markers = [];
+        // 반경이 넓어져 기본 확대로는 먼 마커가 화면 밖이므로, 후보 목록이 바뀔 때 학교와 후보 전체가 보이게 맞춘다.
+        const fitKey=currentPlaces.map(p=>p.id).join('|');if(fitKey&&fitKey!==lastFitKey&&!selectedPlaceId){lastFitKey=fitKey;const bounds=new naver.maps.LatLngBounds(new naver.maps.LatLng(CAMPUS.lat,CAMPUS.lng),new naver.maps.LatLng(CAMPUS.lat,CAMPUS.lng));currentPlaces.forEach(p=>bounds.extend(new naver.maps.LatLng(p.lat,p.lng)));naverMap.fitBounds(bounds,{top:40,right:40,bottom:40,left:40});}
+        for (const [i,p] of currentPlaces.entries()) { const label = element('div', p.id===selectedPlaceId?p.name:String(i+1), 'place-pin' + (p.id === selectedPlaceId ? ' selected' : '')); const marker = new naver.maps.Marker({ map: naverMap, position: new naver.maps.LatLng(p.lat, p.lng), title: p.name, icon: { content: label.outerHTML, anchor: new naver.maps.Point(35, 16) } }); naver.maps.Event.addListener(marker, 'click', () => selectPlace(p.id)); markers.push(marker); }
+        $('mapstatus').textContent = currentPlaces.length ? `${currentPlaces.length}개 주변 장소 · 번호를 누르면 도보 경로를 확인할 수 있습니다.` : '선택한 조건에 맞는 장소가 없습니다.';
+    }
+    window.initNaverMap = () => { if (sdkState === 'failed' || naverMap) return; if (!window.naver?.maps?.Map) { mapFailure('네이버 지도 SDK가 준비되지 않았습니다. 인증 정보와 Dynamic Map 설정을 확인하세요.'); return; } try { $('map').replaceChildren(); naverMap = new naver.maps.Map('map', { center: new naver.maps.LatLng(CAMPUS.lat, CAMPUS.lng), zoom: 15, zoomControl: true }); sdkState = 'ready'; syncMarkers(); new ResizeObserver(() => { if (naverMap) naverMap.setSize(new naver.maps.Size($('map').clientWidth, $('map').clientHeight)); }).observe($('map')); } catch (e) { console.error('지도 초기화 오류:', e.name, e.message); mapFailure('지도 초기화에 실패했습니다: ' + e.message); } };
+    function mapFailure(text) { sdkState = 'failed'; $('mapstatus').textContent = text; }
+    window.navermap_authFailure = () => mapFailure('네이버 지도 인증 실패: Client ID, Dynamic Map 선택, 등록한 Web 서비스 URL을 확인하세요.');
+    function loadNaverMap() {
+        if (!NAVER_MAP_CLIENT_ID.trim()) return;
+        if (location.protocol === 'file:') { $('mapstatus').textContent = '네이버 지도 연결은 localhost 서버로 열어 확인하세요. 지도설정.md를 참고하세요.'; return; }
+        sdkState = 'loading'; $('mapstatus').textContent = '네이버 지도를 불러오는 중입니다…';
+        const script = document.createElement('script'); script.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=' + encodeURIComponent(NAVER_MAP_CLIENT_ID) ; script.async = true; script.onload = () => window.initNaverMap(); script.onerror = () => mapFailure('지도 스크립트를 불러오지 못했습니다. 인터넷 연결을 확인하세요.'); document.head.append(script);
+        setTimeout(() => { if (sdkState === 'loading') mapFailure('지도 응답을 확인하지 못했습니다. 키와 Web 서비스 URL, 네트워크를 확인하고 새로고침하세요.'); }, 15000);
+    }
+    $('mapload').onclick = () => { if (sdkState === 'loading' || sdkState === 'ready') return; const frame = document.createElement('iframe'); frame.title = '성공회대학교 주변 임시 지도'; frame.src = 'https://maps.google.com/maps?q=' + encodeURIComponent('성공회대학교') + '&output=embed'; $('map').replaceChildren(frame); $('mapstatus').textContent = '임시 Google 지도 · 장소 마커는 네이버 지도 연결 후 표시됩니다.'; }; render(); message(''); loadNaverMap(); initNaverSearch();
+</script>
+
+</html>

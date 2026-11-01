@@ -56,7 +56,7 @@ python3 server.py
  ├─ 도보 경로 → FOSSGIS OSRM 도보 서버
  └─ /api/places, /api/transit → server.py
       ├─ 네이버 지역 검색 → NAVER API HUB
-      └─ 대중교통 검색 → ODsay → transit_cache.json
+      └─ 대중교통 검색 → ODsay → 로컬 JSON / 배포 Redis
 ```
 
 비밀키는 서버가 `.env` 또는 환경변수에서 읽습니다. 실제 `.env`는 저장소에 포함하지 않으며, 서버에서도 웹 파일로 제공하지 않습니다.
@@ -72,21 +72,53 @@ python3 server.py
 - 교내 장소는 보행 경로 연결 문제를 피하기 위해 거리 기반 추정치를 사용합니다.
 - 대중교통은 버튼을 눌렀을 때만 조회합니다. **가는 편만 API로 확인하며, 오는 편 시간은 가는 편과 같다고 가정**합니다. 왕복 대기 여유 10분도 별도의 가정값입니다.
 - 대중교통은 실시간 버스 도착 정보나 지도 위 도로 경로선을 제공하지 않습니다.
-- 대중교통 조회에 성공하면 서버 폴더의 `transit_cache.json`에 저장합니다. 저장된 목적지는 서버 재시작 후에도 재사용하며, 파일이 없으면 첫 성공 조회 때 생성합니다.
+- 로컬에서 대중교통 조회에 성공하면 서버 폴더의 `transit_cache.json`에 저장합니다. 저장된 목적지는 서버 재시작 후에도 재사용하며, 파일이 없으면 첫 성공 조회 때 생성합니다.
 - 조회한 경로와 네이버 검색 결과의 브라우저 메모리 캐시는 새로고침하면 사라집니다. 서버의 네이버 검색 캐시는 30분간 유지합니다.
 
-현재 확인된 개선 과제는 네이버 영화관의 이용 시간 분류, 동일 목적지의 서버 동시 조회 방지, 대중교통 일시 오류 후 재시도 처리입니다. 이 최초 커밋은 해당 수정 전 개발 상태를 기록합니다.
+네이버 영화관의 이용 시간 분류는 개선 과제로 남아 있습니다. 대중교통의 일시 오류나 저장소 잠금 경합은 재시도할 수 있도록 처리합니다. 동일 목적지의 동시 조회는 캐시 잠금 안에서 재확인해 중복 호출을 막습니다.
 
 ## 파일 구성
 
 | 파일 | 역할 |
 | --- | --- |
 | `index.html` | 화면, 스타일, 공강·추천 로직, 기본 장소 데이터, 지도 연동 |
-| `server.py` | 로컬 웹서버 및 네이버 검색·대중교통 API 프록시 |
+| `server.py` | 로컬 웹서버 실행 |
+| `backend.py` | 로컬과 Vercel이 공유하는 검색·대중교통 API 로직 |
+| `cache_store.py` | 로컬 JSON 및 배포 Redis 저장, 중복 조회 방지 |
+| `api/handler.py` | Vercel Python Function 진입점 |
+| `build_static.py` | HTML과 기본 장소 JSON만 정적 배포 폴더로 복사 |
+| `vercel.json` | 빌드, 함수 및 API 경로 설정 |
 | `.env.example` | 인증 정보 설정 예시 |
 | `장소데이터.json` | OpenStreetMap 기본 장소 데이터와 출처 |
 
 배포 시 `server.py`를 실행할 수 있는 호스팅 환경과 서버 환경변수가 필요합니다. GitHub Pages만으로는 Python 서버가 실행되지 않습니다. 현재는 최종 과제의 단일 HTML 실행 조건을 별도로 검증·정리해야 하는 개발 단계입니다.
+
+## Vercel 배포 설정
+
+현재 저장소를 Vercel 프로젝트로 가져오고 Framework Preset은 **Other**로 선택합니다. 저장소 루트를 Root Directory로 사용하며, 빌드 명령과 출력 폴더는 `vercel.json` 설정을 따릅니다.
+
+- 정적 화면: `build_static.py`가 `index.html`, `장소데이터.json`만 `public/`으로 복사합니다.
+- 서버 API: `/api/config`, `/api/places`, `/api/transit` 요청을 `api/handler.py`가 처리합니다. 기존 화면의 API 주소를 바꿀 필요가 없습니다.
+- 인증 정보: `.env`를 업로드하지 않고 Vercel 프로젝트의 Environment Variables에 기존 검색·ODsay 변수들을 등록합니다.
+- 지도: 배포 도메인을 NAVER Maps의 Web 서비스 URL에 추가합니다.
+- ODsay: 등록한 URI와 `ODSAY_REFERER`를 확인하고 배포 주소·인증 조건에 맞춥니다. Preview 도메인마다 인증이 되는지는 별도 확인이 필요합니다.
+
+### 배포 환경의 경로 저장
+
+Vercel에서는 프로젝트 폴더의 JSON을 수정하지 않습니다. Upstash Redis를 연결하고 다음 변수를 Vercel 환경변수로 등록합니다. Redis 데이터베이스를 직접 만들거나 Vercel Marketplace에서 연결한 후 **REST URL과 쓰기 가능한 REST Token**을 사용합니다.
+
+```dotenv
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+```
+
+경로는 Redis에 저장하고 다음 Function 실행에서도 재사용합니다. 같은 목적지의 중복 호출은 Redis 잠금으로 막으며, 여러 Function 인스턴스의 ODsay 요청도 공유 호출 간격을 둡니다. 경로 데이터에는 현재 자동 만료를 두지 않으므로 오래된 경로 갱신은 별도 관리가 필요합니다.
+
+**Vercel에서 Redis가 없거나 연결이 실패하면 대중교통 API를 새로 호출하지 않습니다.** 저장되지 않은 요청을 반복해 ODsay 한도를 소비하는 것을 막기 위한 동작입니다. 지도·검색·도보 기능은 별도로 사용할 수 있습니다.
+
+로컬에서는 기존 `python3 server.py` 명령과 `transit_cache.json` 저장을 유지합니다. 로컬에도 Upstash 변수를 설정하면 Redis를 사용합니다. 기존 로컬 JSON을 Redis에 자동 업로드하지는 않습니다.
+
+저장소 코드, `.env`, 개발 문서와 로컬 경로 캐시는 정적 배포 대상에서 제외합니다. 환경변수 변경 후에는 새 배포가 필요합니다. 이 구조는 배포 준비 코드이며 실제 Vercel·Redis 인증은 배포 후 확인해야 합니다.
 
 ## 데이터 출처
 

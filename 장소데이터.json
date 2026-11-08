@@ -1,14 +1,622 @@
 {
-  "fetchedAt": "2026-11-02",
-  "source": "https://api.openstreetmap.org/api/0.6/map?bbox=126.810,37.477,126.840,37.500",
-  "license": "ODbL 1.0",
-  "attribution": "© OpenStreetMap contributors",
-  "copyright": "https://www.openstreetmap.org/copyright",
   "campus": {
     "lat": 37.487519750000004,
     "lng": 126.82579907777777
   },
   "places": [
+    {
+      "id": "naver/126.825203/37.487573/자연드림 성공회대점",
+      "name": "자연드림 성공회대점",
+      "lat": 37.4875729,
+      "lng": 126.8252034,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": "Mo-Fr 08:00-21:00",
+      "source": "https://map.naver.com/p/search/%EC%9E%90%EC%97%B0%EB%93%9C%EB%A6%BC%20%EC%84%B1%EA%B3%B5%ED%9A%8C%EB%8C%80%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 연동로 320 성공회대학교 나눔관 1층",
+      "provider": "naver",
+      "onCampus": true,
+      "snapshotAt": "2026-11-08",
+      "detailSource": "https://www.skhu.ac.kr/skhu/934/subview.do"
+    },
+    {
+      "id": "naver/126.825688/37.488218/국수나무 성공회대점",
+      "name": "국수나무 성공회대점",
+      "lat": 37.4882177,
+      "lng": 126.8256885,
+      "types": [
+        "식사"
+      ],
+      "kind": "국수",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EA%B5%AD%EC%88%98%EB%82%98%EB%AC%B4%20%EC%84%B1%EA%B3%B5%ED%9A%8C%EB%8C%80%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 연동로 320 새천년관 지하1층",
+      "provider": "naver",
+      "onCampus": true,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.824406/37.487711/이디야 성공회대점",
+      "name": "이디야 성공회대점",
+      "lat": 37.4877111,
+      "lng": 126.824406,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%9D%B4%EB%94%94%EC%95%BC%20%EC%84%B1%EA%B3%B5%ED%9A%8C%EB%8C%80%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 연동로 312 2층 이디야 성공회대점",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.824399/37.487822/오구피자 성공회대점",
+      "name": "오구피자 성공회대점",
+      "lat": 37.4878219,
+      "lng": 126.8243989,
+      "types": [
+        "식사"
+      ],
+      "kind": "피자",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%98%A4%EA%B5%AC%ED%94%BC%EC%9E%90%20%EC%84%B1%EA%B3%B5%ED%9A%8C%EB%8C%80%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 연동로 312 동삼파크빌라상가 101호 59쌀피자",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.824891/37.489071/메가MGC커피 성공회대교차로점",
+      "name": "메가MGC커피 성공회대교차로점",
+      "lat": 37.489071,
+      "lng": 126.8248908,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%A9%94%EA%B0%80MGC%EC%BB%A4%ED%94%BC%20%EC%84%B1%EA%B3%B5%ED%9A%8C%EB%8C%80%EA%B5%90%EC%B0%A8%EB%A1%9C%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 경인로 18 1층 106호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.823552/37.491734/기로시마오코노미야끼",
+      "name": "기로시마오코노미야끼",
+      "lat": 37.4917335,
+      "lng": 126.8235519,
+      "types": [
+        "식사"
+      ],
+      "kind": "일식당",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EA%B8%B0%EB%A1%9C%EC%8B%9C%EB%A7%88%EC%98%A4%EC%BD%94%EB%85%B8%EB%AF%B8%EC%95%BC%EB%81%BC%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 경인로3길 77 104호, 105호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.824572/37.492001/뚜레쥬르 온수역남부점",
+      "name": "뚜레쥬르 온수역남부점",
+      "lat": 37.492001,
+      "lng": 126.824572,
+      "types": [
+        "카페"
+      ],
+      "kind": "베이커리",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%9A%9C%EB%A0%88%EC%A5%AC%EB%A5%B4%20%EC%98%A8%EC%88%98%EC%97%AD%EB%82%A8%EB%B6%80%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 경인로3길 58",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.826077/37.482160/9로평상",
+      "name": "9로평상",
+      "lat": 37.4821596,
+      "lng": 126.8260772,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/9%EB%A1%9C%ED%8F%89%EC%83%81%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2134",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.821276/37.483472/유카이도",
+      "name": "유카이도",
+      "lat": 37.4834716,
+      "lng": 126.8212757,
+      "types": [
+        "식사"
+      ],
+      "kind": "일식당",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%9C%A0%EC%B9%B4%EC%9D%B4%EB%8F%84%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 연동로11길 9 케렌시아 1층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.823999/37.492919/디저트39 온수역점",
+      "name": "디저트39 온수역점",
+      "lat": 37.4929187,
+      "lng": 126.8239989,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%94%94%EC%A0%80%ED%8A%B839%20%EC%98%A8%EC%88%98%EC%97%AD%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 부일로 871 1층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.821259/37.491791/고바우",
+      "name": "고바우",
+      "lat": 37.4917913,
+      "lng": 126.8212594,
+      "types": [
+        "식사"
+      ],
+      "kind": "육류,고기요리",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EA%B3%A0%EB%B0%94%EC%9A%B0%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 부일로1길 9",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.821716/37.492096/파리바게뜨 온수역점",
+      "name": "파리바게뜨 온수역점",
+      "lat": 37.4920959,
+      "lng": 126.8217161,
+      "types": [
+        "카페"
+      ],
+      "kind": "베이커리",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%ED%8C%8C%EB%A6%AC%EB%B0%94%EA%B2%8C%EB%9C%A8%20%EC%98%A8%EC%88%98%EC%97%AD%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 부일로1길 4 파리바게뜨 온수역점",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.823333/37.492790/더브라이트하우스커피",
+      "name": "더브라이트하우스커피",
+      "lat": 37.4927896,
+      "lng": 126.8233325,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%8D%94%EB%B8%8C%EB%9D%BC%EC%9D%B4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4%EC%BB%A4%ED%94%BC%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 부일로5길 6 1층 카페 더브라이트하우스커피",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.830870/37.491502/엔제리너스 온수DT점",
+      "name": "엔제리너스 온수DT점",
+      "lat": 37.4915016,
+      "lng": 126.8308701,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%97%94%EC%A0%9C%EB%A6%AC%EB%84%88%EC%8A%A4%20%EC%98%A8%EC%88%98DT%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 경인로 81",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.820869/37.483245/치히로 항동수목원점",
+      "name": "치히로 항동수목원점",
+      "lat": 37.4832451,
+      "lng": 126.8208692,
+      "types": [
+        "식사"
+      ],
+      "kind": "일식당",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%B9%98%ED%9E%88%EB%A1%9C%20%ED%95%AD%EB%8F%99%EC%88%98%EB%AA%A9%EC%9B%90%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 연동로11길 13 1층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.821375/37.492168/메가MGC커피 온수역점",
+      "name": "메가MGC커피 온수역점",
+      "lat": 37.492168,
+      "lng": 126.8213751,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%A9%94%EA%B0%80MGC%EC%BB%A4%ED%94%BC%20%EC%98%A8%EC%88%98%EC%97%AD%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 부일로1길 26-12 지하1층 B05호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.821043/37.492174/온풀샤브칼국수",
+      "name": "온풀샤브칼국수",
+      "lat": 37.4921742,
+      "lng": 126.8210433,
+      "types": [
+        "식사"
+      ],
+      "kind": "한식",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%98%A8%ED%92%80%EC%83%A4%EB%B8%8C%EC%B9%BC%EA%B5%AD%EC%88%98%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 부일로1길 26-12 지1층 B01호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.823778/37.481552/그리니치카페",
+      "name": "그리니치카페",
+      "lat": 37.4815524,
+      "lng": 126.8237781,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EA%B7%B8%EB%A6%AC%EB%8B%88%EC%B9%98%EC%B9%B4%ED%8E%98%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2117 1층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.824777/37.481211/우지커피 구로항동점",
+      "name": "우지커피 구로항동점",
+      "lat": 37.4812105,
+      "lng": 126.8247767,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%9A%B0%EC%A7%80%EC%BB%A4%ED%94%BC%20%EA%B5%AC%EB%A1%9C%ED%95%AD%EB%8F%99%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2118 105호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.817739/37.486499/경인로570숯불구이",
+      "name": "경인로570숯불구이",
+      "lat": 37.486499,
+      "lng": 126.8177389,
+      "types": [
+        "식사"
+      ],
+      "kind": "육류,고기요리",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EA%B2%BD%EC%9D%B8%EB%A1%9C570%EC%88%AF%EB%B6%88%EA%B5%AC%EC%9D%B4%20%EB%B6%80%EC%B2%9C%EC%8B%9C",
+      "address": "경기도 부천시 소사구 경인로 570",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.834492/37.488129/스타벅스 구로오류DT점",
+      "name": "스타벅스 구로오류DT점",
+      "lat": 37.4881292,
+      "lng": 126.8344918,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4%20%EA%B5%AC%EB%A1%9C%EC%98%A4%EB%A5%98DT%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2233 (오류동)",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.823737/37.480431/브런치빈 구로항동점",
+      "name": "브런치빈 구로항동점",
+      "lat": 37.4804308,
+      "lng": 126.823737,
+      "types": [
+        "식사"
+      ],
+      "kind": "브런치",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%B8%8C%EB%9F%B0%EC%B9%98%EB%B9%88%20%EA%B5%AC%EB%A1%9C%ED%95%AD%EB%8F%99%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2104 엠프라자 303호, 304호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.822891/37.479763/투썸플레이스 구로항동점",
+      "name": "투썸플레이스 구로항동점",
+      "lat": 37.4797634,
+      "lng": 126.822891,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B5%AC%EB%A1%9C%ED%95%AD%EB%8F%99%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2096 1~2층 107호, 108호, 205호, 206호, 207호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.814269/37.487117/오무야",
+      "name": "오무야",
+      "lat": 37.4871166,
+      "lng": 126.8142687,
+      "types": [
+        "식사"
+      ],
+      "kind": "카레",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%98%A4%EB%AC%B4%EC%95%BC%20%EB%B6%80%EC%B2%9C%EC%8B%9C",
+      "address": "경기도 부천시 원미구 부일로763번길 10",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.813800/37.487962/분더커피바 역곡본점",
+      "name": "분더커피바 역곡본점",
+      "lat": 37.4879616,
+      "lng": 126.8137995,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%B6%84%EB%8D%94%EC%BB%A4%ED%94%BC%EB%B0%94%20%EC%97%AD%EA%B3%A1%EB%B3%B8%EC%A0%90%20%EB%B6%80%EC%B2%9C%EC%8B%9C",
+      "address": "경기도 부천시 원미구 부일로763번길 30",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.813523/37.487881/드르르",
+      "name": "드르르",
+      "lat": 37.4878809,
+      "lng": 126.8135226,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%93%9C%EB%A5%B4%EB%A5%B4%20%EB%B6%80%EC%B2%9C%EC%8B%9C",
+      "address": "경기도 부천시 원미구 역곡로20번길 49 2층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.838153/37.487237/카페아로미아",
+      "name": "카페아로미아",
+      "lat": 37.4872372,
+      "lng": 126.8381527,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%B9%B4%ED%8E%98%EC%95%84%EB%A1%9C%EB%AF%B8%EC%95%84%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 오리로 1165 상가동 지하1층 117호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.813372/37.488281/카페카라멜 본점",
+      "name": "카페카라멜 본점",
+      "lat": 37.4882805,
+      "lng": 126.8133716,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페,디저트",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%B9%B4%ED%8E%98%EC%B9%B4%EB%9D%BC%EB%A9%9C%20%EB%B3%B8%EC%A0%90%20%EB%B6%80%EC%B2%9C%EC%8B%9C",
+      "address": "경기도 부천시 원미구 부일로763번길 35 1층 카페카라멜",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.838267/37.486611/상상빵집 천왕점",
+      "name": "상상빵집 천왕점",
+      "lat": 37.4866109,
+      "lng": 126.8382668,
+      "types": [
+        "카페"
+      ],
+      "kind": "베이커리",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%83%81%EC%83%81%EB%B9%B5%EC%A7%91%20%EC%B2%9C%EC%99%95%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 오리로 1149 지1층 비104호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.838397/37.486809/롯데리아 천왕역점",
+      "name": "롯데리아 천왕역점",
+      "lat": 37.4868087,
+      "lng": 126.8383967,
+      "types": [
+        "식사"
+      ],
+      "kind": "햄버거",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%A6%AC%EC%95%84%20%EC%B2%9C%EC%99%95%EC%97%AD%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 오리로 1149 랑데르",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.838463/37.486056/와플대학 천왕역 캠퍼스",
+      "name": "와플대학 천왕역 캠퍼스",
+      "lat": 37.4860558,
+      "lng": 126.8384626,
+      "types": [
+        "카페"
+      ],
+      "kind": "와플",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EC%99%80%ED%94%8C%EB%8C%80%ED%95%99%20%EC%B2%9C%EC%99%95%EC%97%AD%20%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 천왕로 106",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.821169/37.478003/갈비도락 구로항동점",
+      "name": "갈비도락 구로항동점",
+      "lat": 37.4780028,
+      "lng": 126.8211687,
+      "types": [
+        "식사"
+      ],
+      "kind": "육류,고기요리",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EA%B0%88%EB%B9%84%EB%8F%84%EB%9D%BD%20%EA%B5%AC%EB%A1%9C%ED%95%AD%EB%8F%99%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로 2070 2층, 3층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.838841/37.486053/메가MGC커피 천왕역점",
+      "name": "메가MGC커피 천왕역점",
+      "lat": 37.4860533,
+      "lng": 126.838841,
+      "types": [
+        "카페"
+      ],
+      "kind": "카페",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%A9%94%EA%B0%80MGC%EC%BB%A4%ED%94%BC%20%EC%B2%9C%EC%99%95%EC%97%AD%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 오리로 1141 1층",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.839019/37.487998/맛짱양꼬치 본점",
+      "name": "맛짱양꼬치 본점",
+      "lat": 37.4879984,
+      "lng": 126.839019,
+      "types": [
+        "식사"
+      ],
+      "kind": "양꼬치",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%A7%9B%EC%A7%B1%EC%96%91%EA%BC%AC%EC%B9%98%20%EB%B3%B8%EC%A0%90%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 서해안로20길 49 우림메르디앙",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.838982/37.485909/배스킨라빈스 구로천왕역",
+      "name": "배스킨라빈스 구로천왕역",
+      "lat": 37.4859093,
+      "lng": 126.8389821,
+      "types": [
+        "카페"
+      ],
+      "kind": "아이스크림",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%B0%B0%EC%8A%A4%ED%82%A8%EB%9D%BC%EB%B9%88%EC%8A%A4%20%EA%B5%AC%EB%A1%9C%EC%B2%9C%EC%99%95%EC%97%AD%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 오리로 1141 (천왕동) 1층 107,108호",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
+    {
+      "id": "naver/126.839166/37.487591/돈우네정육식당",
+      "name": "돈우네정육식당",
+      "lat": 37.4875911,
+      "lng": 126.8391662,
+      "types": [
+        "식사"
+      ],
+      "kind": "정육식당",
+      "amenity": "naver",
+      "openingHours": null,
+      "source": "https://map.naver.com/p/search/%EB%8F%88%EC%9A%B0%EB%84%A4%EC%A0%95%EC%9C%A1%EC%8B%9D%EB%8B%B9%20%EA%B5%AC%EB%A1%9C%EA%B5%AC",
+      "address": "서울특별시 구로구 오리로 1154-15",
+      "provider": "naver",
+      "onCampus": false,
+      "snapshotAt": "2026-11-08"
+    },
     {
       "id": "way/1330375758",
       "name": "푸른수목원 KB숲교육센터",
@@ -593,5 +1201,19 @@
       "access": null,
       "source": "https://www.openstreetmap.org/node/368656586"
     }
-  ]
+  ],
+  "naverSnapshot": {
+    "fetchedAt": "2026-11-08",
+    "source": "https://api.ncloud-docs.com/docs/naver-api-hub-search-local",
+    "description": "성공회대학교 주변 네이버 지역 검색 결과 중 식사·카페 장소를 저장한 기본 데이터",
+    "radiusMeters": 1200,
+    "placeCount": 36
+  },
+  "osmSnapshot": {
+    "fetchedAt": "2026-11-02",
+    "source": "https://api.openstreetmap.org/api/0.6/map?bbox=126.810,37.477,126.840,37.500",
+    "license": "ODbL 1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "copyright": "https://www.openstreetmap.org/copyright"
+  }
 }

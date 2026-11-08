@@ -1,131 +1,60 @@
-# ClassBreak · 쉬는사이
+# ClassBreak 쉬는사이
 
-성공회대학교 시간표를 등록하고, 수업 사이 공강에 다녀올 수 있는 주변 장소를 찾아보는 미니 웹서비스입니다. 대학 수업의 **Vibe Coding을 활용한 미니 웹서비스 개발 프로젝트**로 개발하고 있습니다.
+성공회대학교 학생의 시간표를 바탕으로 공강에 다녀올 수 있는 주변 장소를 추천하는 미니 웹서비스입니다. 윤종현 202214106의 1인 프로젝트입니다.
 
-## 주요 기능
+## 바로 실행하기
 
-- 요일·과목·수업 시간을 입력하고 브라우저에 시간표 저장
-- 같은 날 수업을 시간순으로 정리해 공강 계산
-- 식사·카페·공부·산책·놀거리·휴식별 주변 장소 표시
-- 공강 길이와 이동·이용 시간을 고려한 추천
-- 네이버 지도에서 위치 확인, 도보 경로와 이동 시간 조회
-- 선택한 장소의 대중교통 시간 조회 및 도보와 비교
+ZIP을 풀고 index.html을 Chrome 등 웹 브라우저로 엽니다. 시간표 등록과 저장, 공강 계산, 기본 장소 추천과 학교 주변 지도는 API 키 없이 사용할 수 있습니다.
 
-현재 개발 중인 버전입니다. 지도·외부 검색·길찾기를 사용하려면 인터넷 연결이 필요합니다.
+시간표 등록을 펼쳐 같은 요일에 수업 두 개를 입력하거나 예시 시간표 넣기를 누릅니다. 월요일 12:00~14:00, 16:00~18:00 수업 사이의 120분 공강이 표시됩니다. 활동을 고르면 추천 목록과 지도 핀이 바뀝니다.
 
-## 실행 방법
+HTML에는 11월 8일 저장한 네이버 카페·음식점 정보와 OSM 장소·벡터 지도 데이터를 포함했습니다. 네이버 기본 장소는 학교에서 직선거리 1.2km 이내의 실제 검색 결과이며, 키 없이도 사용할 수 있습니다. 네이버 지도 인증에 성공하면 네이버 지도를 표시하고, 직접 실행하거나 연결에 실패하면 내장 지도를 표시합니다. 모바일에서는 공강과 활동을 먼저 고르고 시간표와 이동 수단을 펼쳐 사용할 수 있습니다.
 
-서버는 Python 3 표준 라이브러리만 사용합니다. 별도 패키지 설치가 필요하지 않습니다.
+내장 지도는 드래그로 이동하고 +와 − 버튼으로 확대·축소할 수 있습니다. PC에서는 마우스 휠도 사용할 수 있고, 모바일에서는 두 손가락으로 확대·축소합니다. 전체 버튼은 추천 장소가 모두 보이는 화면으로 돌아갑니다. 지도에 초점을 맞춘 뒤 방향키, +, −, Home 키로도 조작할 수 있습니다. 지도 배경은 HTML에 담긴 학교 주변 범위입니다.
 
-```sh
-git clone https://github.com/milel080541-design/ClassBreak.git
-cd ClassBreak
-cp .env.example .env
-```
+## API와 함께 실행하기
 
-`.env`에 사용할 서비스의 인증 정보를 입력합니다. 키를 설정하지 않은 서비스는 사용할 수 없지만, 기본 장소 데이터와 공강·거리 기반 추천은 사용할 수 있습니다.
-
-```dotenv
-NAVER_SEARCH_CLIENT_ID=
-NAVER_SEARCH_CLIENT_SECRET=
-ODSAY_API_KEY=
-# ODSAY_REFERER=http://localhost
-```
-
-- **지역 검색:** 네이버 클라우드 콘솔의 NAVER API HUB에서 발급한 Client ID·Client Secret을 사용합니다.
-- **지도:** `index.html`의 `NAVER_MAP_CLIENT_ID`를 설정하고, Maps Application의 Web 서비스 URL에 실행 도메인을 등록합니다. 로컬 개발 주소는 `http://localhost`입니다. 지도용 ID는 브라우저에서 사용하며 검색 API 인증 정보와 다릅니다.
-- **대중교통:** ODsay LAB의 인증키를 사용합니다. Web 키를 사용하면 등록한 URI와 `ODSAY_REFERER` 설정을 맞춥니다.
-- **도보 길찾기:** 별도 키 없이 공개 도보 경로 서버를 사용합니다.
+Python 3 표준 라이브러리만 사용하며 별도 패키지를 설치할 필요가 없습니다. 이 폴더에서 다음 명령을 실행합니다.
 
 ```sh
 python3 server.py
 ```
 
-브라우저에서 **http://localhost:8000**에 접속합니다. 포트를 바꾸려면 `python3 server.py --port 8001`로 실행합니다. 서버 코드나 `.env`를 바꾼 뒤에는 서버를 재시작해야 합니다.
+브라우저에서 http://localhost:8000/ 에 접속합니다. 서버 종료는 터미널에서 Ctrl+C를 누릅니다.
 
-`python3 -m http.server` 또는 Live Server는 API 프록시를 실행하지 않으므로 네이버 검색과 대중교통 조회를 사용할 수 없습니다. HTML을 `file://`로 직접 열면 현재 코드에서는 네이버 지도를 초기화하지 않습니다.
+네이버 장소 검색과 ODsay 대중교통 조회에는 해당 서비스의 인증 정보가 필요합니다. .env.example을 .env로 복사한 뒤 사용할 키를 입력하고 서버를 다시 실행합니다. 실제 .env는 제출본과 저장소에 포함하지 않습니다.
 
-## 동작 구조
-
-```text
-브라우저 index.html
- ├─ 시간표 → localStorage
- ├─ 공강 계산·추천 → JavaScript
- ├─ 기본 장소 → HTML 안에 포함된 장소 41곳
- ├─ 지도 → NAVER Maps JavaScript SDK
- ├─ 도보 경로 → FOSSGIS OSRM 도보 서버
- └─ /api/places, /api/transit → server.py
-      ├─ 네이버 지역 검색 → NAVER API HUB
-      └─ 대중교통 검색 → ODsay → 로컬 JSON / 배포 Redis
-```
-
-비밀키는 서버가 `.env` 또는 환경변수에서 읽습니다. 실제 `.env`는 저장소에 포함하지 않으며, 서버에서도 웹 파일로 제공하지 않습니다.
-
-네이버 검색을 사용할 수 없을 때는 HTML에 포함된 OpenStreetMap 장소 데이터를 사용합니다. `장소데이터.json`은 기본 데이터의 원본이며, 화면에서 이 JSON 파일을 별도로 불러오는 방식은 아닙니다.
-
-## 추천 시간과 현재 한계
-
-기본 계산 기준은 **왕복 이동 시간 + 활동 이용 시간 + 복귀 여유 10분 ≤ 공강**입니다.
-
-- 도보 경로 조회 전에는 직선거리를 기반으로 시간을 추정합니다. 조회 후에는 경로 서버가 반환한 왕복 시간으로 해당 장소를 다시 계산합니다.
-- 활동 이용 시간은 현재 고정 가정값입니다. 영업 여부, 혼잡도, 실제 체류 시간, 도서관 출입 조건은 보장하지 않습니다.
-- 교내 장소는 보행 경로 연결 문제를 피하기 위해 거리 기반 추정치를 사용합니다.
-- 대중교통은 버튼을 눌렀을 때만 조회합니다. **가는 편만 API로 확인하며, 오는 편 시간은 가는 편과 같다고 가정**합니다. 왕복 대기 여유 10분도 별도의 가정값입니다.
-- 대중교통은 실시간 버스 도착 정보나 지도 위 도로 경로선을 제공하지 않습니다.
-- 로컬에서 대중교통 조회에 성공하면 서버 폴더의 `transit_cache.json`에 저장합니다. 저장된 목적지는 서버 재시작 후에도 재사용하며, 파일이 없으면 첫 성공 조회 때 생성합니다.
-- 조회한 경로와 네이버 검색 결과의 브라우저 메모리 캐시는 새로고침하면 사라집니다. 서버의 네이버 검색 캐시는 30분간 유지합니다.
-
-네이버 영화관의 이용 시간 분류는 개선 과제로 남아 있습니다. 대중교통의 일시 오류나 저장소 잠금 경합은 재시도할 수 있도록 처리합니다. 동일 목적지의 동시 조회는 캐시 잠금 안에서 재확인해 중복 호출을 막습니다.
+네이버 지도용 공개 ID는 index.html의 NAVER_MAP_CLIENT_ID에서 설정하며 서비스에 실행 주소를 등록해야 합니다. 검색용 Client ID와 Secret은 서버에서 사용합니다. 도보 길찾기는 별도 키 없이 공개 경로 서버에 요청하며 인터넷이 필요합니다.
 
 ## 파일 구성
 
-| 파일 | 역할 |
-| --- | --- |
-| `index.html` | 화면, 스타일, 공강·추천 로직, 기본 장소 데이터, 지도 연동 |
-| `server.py` | 로컬 웹서버 실행 |
-| `backend.py` | 로컬과 Vercel이 공유하는 검색·대중교통 API 로직 |
-| `cache_store.py` | 로컬 JSON 및 배포 Redis 저장, 중복 조회 방지 |
-| `api/handler.py` | Vercel Python Function 진입점 |
-| `build_static.py` | HTML과 기본 장소 JSON만 정적 배포 폴더로 복사 |
-| `vercel.json` | 빌드, 함수 및 API 경로 설정 |
-| `.env.example` | 인증 정보 설정 예시 |
-| `장소데이터.json` | OpenStreetMap 기본 장소 데이터와 출처 |
+- index.html — 화면, 시간표, 공강 계산, 추천, 내장 지도와 장소 데이터
+- server.py — 로컬 서버, 네이버 장소 검색, 대중교통 조회와 JSON 캐시 저장
+- 장소데이터.json — 네이버 검색 결과와 OSM 기본 장소 데이터, 수집 날짜와 출처
+- .env.example — 값이 비어 있는 서버 인증 정보 양식
+- README.md — 실행 방법과 현재 기능
 
-배포 시 `server.py`를 실행할 수 있는 호스팅 환경과 서버 환경변수가 필요합니다. GitHub Pages만으로는 Python 서버가 실행되지 않습니다. 현재는 최종 과제의 단일 HTML 실행 조건을 별도로 검증·정리해야 하는 개발 단계입니다.
+server.py는 브라우저에 /api/config, /api/places, /api/transit을 제공합니다. 대중교통 조회에 성공하면 같은 폴더의 transit_cache.json에 결과를 저장하고 다음 조회에 재사용합니다. 파일이 없으면 처음 저장할 때 만듭니다. 이미 쓰던 JSON도 같은 형식으로 읽습니다.
 
-## Vercel 배포 설정
+시간표는 브라우저 localStorage에 저장합니다. 네이버 검색 결과는 서버 메모리에 30분간 저장하며 서버를 다시 실행하면 사라집니다.
 
-현재 저장소를 Vercel 프로젝트로 가져오고 Framework Preset은 **Other**로 선택합니다. 저장소 루트를 Root Directory로 사용하며, 빌드 명령과 출력 폴더는 `vercel.json` 설정을 따릅니다.
+## 추천 기준과 현재 제약
 
-- 정적 화면: `build_static.py`가 `index.html`, `장소데이터.json`만 `public/`으로 복사합니다.
-- 서버 API: `/api/config`, `/api/places`, `/api/transit` 요청을 `api/handler.py`가 처리합니다. 기존 화면의 API 주소를 바꿀 필요가 없습니다.
-- 인증 정보: `.env`를 업로드하지 않고 Vercel 프로젝트의 Environment Variables에 기존 검색·ODsay 변수들을 등록합니다.
-- 지도: 배포 도메인을 NAVER Maps의 Web 서비스 URL에 추가합니다.
-- ODsay: 등록한 URI와 `ODSAY_REFERER`를 확인하고 배포 주소·인증 조건에 맞춥니다. Preview 도메인마다 인증이 되는지는 별도 확인이 필요합니다.
+왕복 이동 시간, 활동별 이용 시간, 복귀 여유 10분의 합을 공강과 비교합니다. 길찾기 전에는 직선거리로 도보 시간을 추정하고, 경로 응답을 받으면 해당 시간으로 다시 계산합니다. 인터넷 연결이나 경로 서버 문제로 조회에 실패하면 추정 시간을 유지합니다.
 
-### 배포 환경의 경로 저장
+식사 40분, 카페 30분, 공부 60분, 산책 30분, 놀거리 60분, 휴식 20분은 현재 가정값입니다. 영화관은 상영 시작 시간을 반영할 수 없어 추천에서 제외합니다. 시설 운영, 출입 조건과 대기 시간은 별도 확인이 필요합니다.
 
-Vercel에서는 프로젝트 폴더의 JSON을 수정하지 않습니다. Upstash Redis를 연결하고 다음 변수를 Vercel 환경변수로 등록합니다. Redis 데이터베이스를 직접 만들거나 Vercel Marketplace에서 연결한 후 **REST URL과 쓰기 가능한 REST Token**을 사용합니다.
+대중교통은 버튼을 누를 때만 조회합니다. 돌아오는 시간은 가는 편과 같다고 가정하며 실시간 버스 도착 정보와 지도 위 대중교통 경로선은 제공하지 않습니다.
 
-```dotenv
-UPSTASH_REDIS_REST_URL=
-UPSTASH_REDIS_REST_TOKEN=
-```
-
-경로는 Redis에 저장하고 다음 Function 실행에서도 재사용합니다. 같은 목적지의 중복 호출은 Redis 잠금으로 막으며, 여러 Function 인스턴스의 ODsay 요청도 공유 호출 간격을 둡니다. 경로 데이터에는 현재 자동 만료를 두지 않으므로 오래된 경로 갱신은 별도 관리가 필요합니다.
-
-**Vercel에서 Redis가 없거나 연결이 실패하면 대중교통 API를 새로 호출하지 않습니다.** 저장되지 않은 요청을 반복해 ODsay 한도를 소비하는 것을 막기 위한 동작입니다. 지도·검색·도보 기능은 별도로 사용할 수 있습니다.
-
-로컬에서는 기존 `python3 server.py` 명령과 `transit_cache.json` 저장을 유지합니다. 로컬에도 Upstash 변수를 설정하면 Redis를 사용합니다. 기존 로컬 JSON을 Redis에 자동 업로드하지는 않습니다.
-
-저장소 코드, `.env`, 개발 문서와 로컬 경로 캐시는 정적 배포 대상에서 제외합니다. 환경변수 변경 후에는 새 배포가 필요합니다. 이 구조는 배포 준비 코드이며 실제 Vercel·Redis 인증은 배포 후 확인해야 합니다.
+현재는 로컬 실행 버전이며 공개 배포는 아직 진행하지 않았습니다.
 
 ## 데이터 출처
 
-기본 장소 데이터는 2026년 11월 2일 수집한 성공회대학교 주변 OpenStreetMap 데이터입니다.
+기본 카페·음식점은 2026년 11월 8일 NAVER API HUB 지역 검색 응답을 저장했습니다. 자연드림의 나눔관 1층 위치와 평일 운영 시간은 성공회대학교 편의시설 안내를 참고했습니다. 실시간 영업 여부는 반영하지 않습니다. OSM 장소 데이터는 11월 2일, 내장 OSM 지도는 11월 6일 수집했습니다. 장소 출처는 장소데이터.json, 지도 원본 범위는 index.html의 OSM vector source 주석에 있습니다.
 
-- [OpenStreetMap contributors · ODbL](https://www.openstreetmap.org/copyright)
-- [NAVER Maps JavaScript API](https://navermaps.github.io/maps.js.ncp/docs/)
-- [NAVER API HUB 지역 검색 API](https://api.ncloud-docs.com/docs/naver-api-hub-search-local)
-- [FOSSGIS OSRM 경로 서버](https://routing.openstreetmap.de/about.html)
-- [ODsay LAB API](https://lab.odsay.com/guide/releaseReference?platform=web)
+- [성공회대학교 편의시설](https://www.skhu.ac.kr/skhu/934/subview.do)
+- [OpenStreetMap contributors 및 ODbL](https://www.openstreetmap.org/copyright)
+- [FOSSGIS OSRM 도보 경로 서버](https://routing.openstreetmap.de/about.html)
+- [NAVER API HUB 지역 검색](https://api.ncloud-docs.com/docs/naver-api-hub-search-local)
+- [ODsay LAB](https://lab.odsay.com/guide/releaseReference?platform=web)
+- [소스 저장소](https://github.com/milel080541-design/ClassBreak)

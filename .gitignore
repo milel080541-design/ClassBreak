@@ -14,7 +14,5 @@ __pycache__/
 # 로컬 테스트
 test.cjs
 
-# 배포 산출물 및 로컬 캐시
-public/
-.vercel/
+# 로컬 캐시
 transit_cache.json
